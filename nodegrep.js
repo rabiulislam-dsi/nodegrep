@@ -1,10 +1,8 @@
 const fs = require("fs");
 const readline = require("readline");
 
-// extract command line args
-let queryArgs = process.argv.slice(2);
-let queryWord = queryArgs[0];
-let queryFile = queryArgs[1];
+// get command line args
+let [queryPattern, queryFile] = process.argv.slice(2, 4);
 
 // fs.readFile(`./${queryFile}`, (err, buffer) => {
 //   if (err) throw err;
@@ -13,7 +11,7 @@ let queryFile = queryArgs[1];
 //   let matchedLines = bufferString
 //     .split("\n")
 //     .filter((line, index) =>
-//       line.toLowerCase().includes(queryWord.toLowerCase())
+//       line.toLowerCase().includes(queryPattern.toLowerCase())
 //     );
 //   console.log(matchedLines.join("\n"));
 // });
@@ -25,7 +23,7 @@ let readlineInterFace = readline.createInterface({
 
 //add eventlistener --> 'line'
 readlineInterFace.on("line", line => {
-  if (line.includes(queryWord)) {
+  if (line.includes(queryPattern)) {
     console.log(line);
   }
 });

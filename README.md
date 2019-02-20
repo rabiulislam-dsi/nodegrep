@@ -1,12 +1,13 @@
 # nodegrep
+
 A grep-like program.
 
-* Usage
+- Usage
 
   - Open command line and run this command-
-  
+
     ```
-    $ node nodegrep.js <the word you want to search> <path to the file>
+    $ node nodegrep.js <pattern> <filename>
     ```
+
     **(Example - node nodegrep.js demo test.txt)**
-  
